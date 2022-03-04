@@ -1,9 +1,14 @@
 import React from "react";
 import Geocoding from "./Geocoding";
+import SearchBar from "./SearchBar";
 
 class App extends React.Component {
   render() {
-    return <Geocoding></Geocoding>;
+    return (
+      <div>
+        <SearchBar></SearchBar>
+      </div>
+    );
   }
 }
 

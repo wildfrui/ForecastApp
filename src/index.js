@@ -1,5 +1,15 @@
 import ReactDOM from "react-dom";
-import React from "react";
+import { Provider } from "react-redux";
+import { createStore, compose } from "redux";
+import reducers from "./reducers";
 import App from "./components/App.js";
 
-ReactDOM.render(<App></App>, document.getElementById("root"));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers());
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App></App>
+  </Provider>,
+  document.getElementById("root")
+);
