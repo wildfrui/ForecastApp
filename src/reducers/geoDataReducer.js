@@ -6,9 +6,9 @@ const initialState = {
 export const geoDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_COORDINATES":
-      return action.payload;
+      return { ...state, ...action.payload };
     case "FETCH_WEATHER":
-      return action.payload;
+      return { ...state, ...action.payload };
     default:
       return state;
   }
