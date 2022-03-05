@@ -1,21 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setSearchTerm } from "../actions";
+//импортируем функцию debouncer
 import debounce from "lodash.debounce";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    //делаем из обычной функции функцию debouncer
     this.onDebouncedInputChange = debounce(this.onInputChange, 1000);
+    //привязываем функцию к окружению, чтобы внутри нее можно было использовать this
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-
+  //функция, непосредственно вызываемая обработчиком событий
   handleInputChange(e) {
     this.onDebouncedInputChange(e.target.value);
   }
-
+  //функция, вызывающая action и props, уведомляющий родителя о изменении term
   onInputChange = (term) => {
-    this.props.setSearchTerm({ term });
+    this.props.setSearchTerm(term);
+    if (this.props.handleSearch) {
+      this.props.handleSearch();
+    }
   };
 
   render() {

@@ -1,4 +1,8 @@
-export const searchTermReducer = (state = {}, action) => {
+const initialState = {
+  term: "Moscow",
+};
+
+export const searchTermReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_TERM":
       return action.payload;
