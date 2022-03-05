@@ -12,6 +12,11 @@ class SearchBar extends React.Component {
     //привязываем функцию к окружению, чтобы внутри нее можно было использовать this
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+
+  componentWillUnmount() {
+    this.onDebouncedInputChange.cancel();
+  }
+
   //функция, непосредственно вызываемая обработчиком событий
   handleInputChange(e) {
     this.onDebouncedInputChange(e.target.value);
