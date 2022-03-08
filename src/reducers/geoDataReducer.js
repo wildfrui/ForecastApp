@@ -1,4 +1,4 @@
-const initialState = {
+let initialState = {
   lat: null,
   lon: null,
 };

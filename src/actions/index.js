@@ -13,7 +13,6 @@ export const setSearchTerm = (term) => {
 export const fetchCoordsAndData = (term) => {
   return async (dispatch, setState) => {
     await dispatch(fetchCoordinates(term));
-
     const { lat, lon } = setState().geo;
     console.log(lat, lon);
     dispatch(fetchWeatherData(lat, lon));
@@ -43,6 +42,7 @@ export const fetchWeatherData = (lat, lon) => {
     const { data } = await geo.get("/data/2.5/forecast", {
       params: {
         units: "metric",
+        lang: "ru",
         lat,
         lon,
         appid: "b0f9a26df43beb87f682a76da5674de9",
