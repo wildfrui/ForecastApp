@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setSearchTerm } from "../actions";
 //импортируем функцию debouncer
 import debounce from "lodash.debounce";
+import "./SearchBar.css";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -32,7 +33,11 @@ class SearchBar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <input type="text" onChange={this.handleInputChange} />
+        <input
+          className="geo__input"
+          type="text"
+          onChange={this.handleInputChange}
+        />
       </React.Fragment>
     );
   }

@@ -46,21 +46,41 @@ class WeatherInfo extends React.Component {
         <div className="weather__info">
           <div className="weather__header">
             <div className="weather__name">{data.city.name}</div>
+
             <div className="weather__data">
               <div className="weather__temp">
                 {Math.round(data.list[0].main.temp)}
               </div>
+
               <div className="weather__like">
                 Ощущается как {Math.round(data.list[0].main.feels_like)}
               </div>
             </div>
           </div>
 
+          <div className="weather__dopinfo">
+            <div className="weather__max">
+              Максимальная температура {Math.round(data.list[0].main.temp_max)}
+            </div>
+            <div className="weather__min">
+              Минимальная температура {Math.round(data.list[0].main.temp_max)}
+            </div>
+            <div className="weather__humidity">
+              Влажность {data.list[0].main.humidity}
+            </div>
+            <div className="weather__pressure">
+              Давление {data.list[0].main.pressure}
+            </div>
+            <div className="weather__visibility">
+              Видимость {`${data.list[0].visibility} км`}
+            </div>
+          </div>
           <div className="weather__days days">{this.renderDays()}</div>
         </div>
       );
     }
   }
+
   render() {
     const { data } = this.props;
     return <div>{this.renderInfo(data)}</div>;

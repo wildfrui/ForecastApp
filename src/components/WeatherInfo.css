@@ -1,24 +1,30 @@
 .weather__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
+  color: rgb(44, 16, 16);
 }
 
 .weather__header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .weather__name {
   font-size: 100px;
+  color: #ecc488;
 }
 
 .weather__data {
   margin-left: 50px;
 }
 .weather__temp {
-  font-size: 60px;
+  font-size: 100px;
+  color: #ffadf0;
 }
 .weather__like {
+  color: #fff;
 }
 
 .days {
@@ -26,11 +32,11 @@
   display: flex;
 }
 .days__one {
-  margin-right: 10px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid rgb(3, 3, 3);
+  border: 5px solid #323232;
   border-radius: 10%;
   padding: 5px 30px;
 }
@@ -38,4 +44,20 @@
   font-size: 100px;
 }
 .days__date {
+}
+
+.weather__dopinfo {
+  border-top: 3px solid #323232;
+  border-bottom: 3px solid #323232;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fdebf7;
+  padding: 20px 0px;
+}
+.weather__description {
+  font-size: 30px;
+  max-width: 200px;
 }
